@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#description">Description</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#technologies-used">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#prerequisites">Prerequisites</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#installing">Installing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#sources">Sources</a>
+</p>
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+A rectangular map consisting of N rows and M columns of square areas is given.
+Each area is painted with a certain color.
 
-### `yarn start`
+Two areas on the map belong to the same country if the following conditions are
+met:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* they have the same color;
+* it is possible to travel from one area to the other orthogonally (that is, by moving only north, south, west or east) without moving over areas of a different
+color.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The map can be described by a zero-indexed matriz A consisting of N rows and M
+columns of integers. The color of each area is described by the corresponding
+element of the matrix. Two areas have the same color if and only if their matrix elements have the same value.
 
-### `yarn test`
+For example, consider the following matrix. A consisting of seven rows and three
+columns:
+```
+A[0][0] = 5     A[0][1] = 4     A[0][2] = 4
+A[1][0] = 4     A[1][1] = 3     A[1][2] = 4
+A[2][0] = 4     A[2][1] = 2     A[2][2] = 4
+A[3][0] = 4     A[3][1] = 2     A[3][2] = 2
+A[4][0] = 4     A[4][1] = 3     A[4][2] = 4
+A[5][0] = 4     A[5][1] = 4     A[5][2] = 4
+A[6][0] = 4     A[6][1] = 1     A[6][2] = 1
+```
+Matrix A describes a map that is colores with five colors. The areas on the map belong to eleven different countries (C1-C11), as shown in the following figure:
+<p align="center">
+  <img alt="Preview" src="./assets/matrix.jpg" width="20%">
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Write a function
+```
+function solution(A);
+```
 
-### `yarn build`
+that, given a zero-indexed matrix A consisting of N rows and M columns of integers, returns the number of different contries to which the areas of the map described by matrix A belong.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For example, given matrix A consisting of seven rows and three columns correspondings to the example above, the function should return 11.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Write an efficient algorithm for the following assumptions:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* N and M are integers within the range [1..300,000];
+* the number of elements in matrix A is within the range [1..300,000];
+* each element of matrix A is an integer within the range [-1,000,000,000..1,000,000,000].
