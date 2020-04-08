@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
 import '../styles/Map.css'
 
 
@@ -35,7 +36,12 @@ export default function Map(props) {
       }
 
     return(
-        <div dangerouslySetInnerHTML={{ __html: drawMapTable() }}>
+        <div className="container">
+            <div dangerouslySetInnerHTML={{ __html: drawMapTable() }}></div>
+            <div className="group-button">
+                <Button variant="contained">Count Countries</Button >
+                <Button variant="contained">Count countries showing working</Button >
+            </div>
         </div>
     )
 }

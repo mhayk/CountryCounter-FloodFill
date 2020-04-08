@@ -27,3 +27,18 @@ td {
   width: 3vw;
   height: 3vw;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .group-button {
+    margin-top: 20px;
+}
+
+.container .group-button :first-child {
+    margin-right: 10px;
+}
