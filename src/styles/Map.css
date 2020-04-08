@@ -1,0 +1,29 @@
+/* map colors */
+.m5 {
+  background-color: #00174f;
+}
+
+.m4 {
+  background-color: #66bdf6;
+}
+
+.m3 {
+  background-color: #2471db;
+}
+
+.m2 {
+  background-color: #0832A7;
+}
+
+.m1 {
+  background-color: #9FD9FF;
+}
+
+.countryCount {
+  font-size: 200%;
+}
+
+td {
+  width: 3vw;
+  height: 3vw;
+}

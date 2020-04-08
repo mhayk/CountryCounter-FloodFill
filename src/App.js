@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Map from './components/Map'
+
 function App() {
+
+  const matrix = [
+    [5, 4, 4],
+    [4, 3, 4],
+    [3, 2, 4],
+    [2, 2, 2],
+    [3, 3, 4],
+    [1, 4, 4],
+    [4, 1, 1]
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      The map:
+      <Map matrix={matrix} />
     </div>
   );
 }
