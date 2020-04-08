@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-import Map from './components/Map'
+import Map from './components/Map';
 
 function App() {
-
-  const matrix = [
+  const [matrix, setMatrix] = useState([
     [5, 4, 4],
     [4, 3, 4],
     [3, 2, 4],
     [2, 2, 2],
     [3, 3, 4],
     [1, 4, 4],
-    [4, 1, 1]
-  ]
+    [4, 1, 1],
+  ]);
 
   return (
     <div className="App">
       The map:
-      <Map matrix={matrix} />
+      {
+      console.log(matrix)
+}
+      <Map />
+      {
+      console.log(matrix)
+}
     </div>
   );
 }
